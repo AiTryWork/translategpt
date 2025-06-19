@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+youtube-transcript-api
+openai
+elevenlabs
+python-dotenv
+requests
+ffmpeg-python

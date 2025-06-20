@@ -6,3 +6,4 @@ elevenlabs
 python-dotenv
 requests
 ffmpeg-python
+yt-dlp

@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 youtube-transcript-api
-openai
+openai==0.28.1
 elevenlabs
 python-dotenv
 requests

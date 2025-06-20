@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from utils.transcript_fetcher import fetch_transcript
 from utils.translator import translate_text
@@ -11,6 +12,15 @@ from utils.merger import merge_audio_with_video
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or use ["https://translatesgpt.netlify.app"] for tighter security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 class VideoRequest(BaseModel):
     youtube_url: str

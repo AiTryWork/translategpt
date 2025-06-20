@@ -8,7 +8,7 @@ from utils.transcript_fetcher import fetch_transcript
 from utils.translator import translate_text
 from utils.voice_generator import generate_voice
 from utils.merger import merge_audio_with_video
-from fastapi.staticfiles import StaticFiles  # ✅ ADD THIS
+
 
 app = FastAPI()
 
@@ -26,6 +26,3 @@ async def process_video(request: VideoRequest):
         return {"status": "success", "download_url": output_path}
     except Exception as e:
         return {"status": "error", "message": str(e)}
-
-# ✅ ADD THIS AT THE END (after all route definitions)
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
